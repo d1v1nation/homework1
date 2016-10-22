@@ -78,7 +78,8 @@ public class CalcLogic implements Parcelable {
 
     public void setCurrentOp(Operation currentOp) {
         this.currentOp = currentOp;
-        calculate();
+        if (!lastEq)
+            calculate();
 
         stateLHOp = stateCurrent;
         stateCurrent = "";

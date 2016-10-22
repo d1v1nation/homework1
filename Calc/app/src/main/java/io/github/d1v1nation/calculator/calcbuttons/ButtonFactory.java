@@ -72,9 +72,6 @@ public class ButtonFactory {
         //OCL
         b.setOnClickListener(new ClrOnClickListener(calcLogic));
 
-        //strange requirements
-        b.getResources().getI
-
         return b;
     }
 
