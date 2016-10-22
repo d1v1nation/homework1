@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.percent.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootContainer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="0dp"
+    android:paddingBottom="0dp"
+    android:paddingLeft="0dp"
+    android:paddingRight="0dp"
+    android:paddingTop="0dp"
+    tools:context="io.github.d1v1nation.calculator.CalcActivity">
+
+    <!--TODO: repl with correct rendering-->
+    <!--TODO: landscape-->
+    <android.support.percent.PercentRelativeLayout
+        android:id="@+id/indicatorContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/buttonPanel"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        >
+
+        <TextView
+            android:id="@+id/indicatorFirstOperand"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_heightPercent="40%"
+            app:layout_widthPercent="45%"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:text="OP_1"/>
+        <TextView
+            android:id="@+id/indicatorOperation"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_heightPercent="40%"
+            app:layout_widthPercent="10%"
+            android:layout_toEndOf="@id/indicatorFirstOperand"
+            android:layout_toRightOf="@id/indicatorFirstOperand"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:text="OP"/>
+        <TextView
+            android:id="@+id/indicatorSecondOperand"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_heightPercent="40%"
+            app:layout_widthPercent="45%"
+            android:layout_toRightOf="@id/indicatorOperation"
+            android:layout_toEndOf="@id/indicatorOperation"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:text="OP_2"/>
+        <TextView
+            android:id="@+id/indicatorResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:textSize="30sp"
+            android:text="RESULT"
+            />
+
+
+    </android.support.percent.PercentRelativeLayout>
+
+
+
+    <!--Keyboard 4x3 right, ops 4x1 left-->
+    <!--SquareLinearLayout: onMeasure override to make stuff squarey!-->
+
+    <!--<LinearLayout-->
+        <!--android:id="@id/buttonPanelContainer"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:layout_below="@id/indicatorResult"-->
+        <!--app:layout_aspectRatio="100%">-->
+        <io.github.d1v1nation.calculator.layoutext.SquarePercentRelativeLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@id/buttonPanel"
+            android:layout_width="match_parent"
+            android:layout_alignParentBottom="true"
+            app:layout_aspectRatio="100%"
+             />
+    <!--</LinearLayout>-->
+</android.support.percent.PercentRelativeLayout>
